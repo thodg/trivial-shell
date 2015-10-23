@@ -72,12 +72,7 @@ of gamma radiation and repeated does of the sonic screwdriver.
 		 (:file "unsupported")                                     
 		 #+digitool
 		 (:module "mcl"
-			  :components ((:file "eval-apple-script")))))
-               (:module 
-		"website"
-		:components
-		((:module "source"
-			  :components ((:static-file "index.md"))))))
+			  :components ((:file "eval-apple-script"))))))
   :in-order-to ((test-op (load-op trivial-shell-test)))
   :perform (test-op :after (op c)
 		    (funcall
@@ -89,5 +84,3 @@ of gamma radiation and repeated does of the sonic screwdriver.
            ((o test-op)
             (c (eql (find-system 'trivial-shell))))
   (values nil))
-
-
