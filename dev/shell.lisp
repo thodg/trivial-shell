@@ -16,6 +16,8 @@
 	 (princ line s)
 	 (terpri s))))
 
+(defgeneric shell-command (command &key input))
+
 (defmethod shell-command ((command pathname) &key input)
   (shell-command (namestring command) :input input))
 
